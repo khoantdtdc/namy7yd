@@ -1,0 +1,29 @@
+name: Chrome AZ
+on: 
+  workflow_dispatch:
+    inputs:
+      authcode:
+        description: 'Nhập CRD code'
+        required: true
+      pincode:
+        description: 'Nhập 6 số Pin'
+        required: true
+  
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Initializing Setup
+      run: ./setup.ps1
+    - name: Starting CRD
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
+
+    - name: Downloading File...
+      run: |
+        Invoke-WebRequest https://files-cdn.coccoc.com/browser/x64/coccoc_en_machine.exe -OutFile coccoc_en_machine.exe
+        copy coccoc_en_machine.exe C:\Users\runneradmin\Downloads\coccoc_en_machine.exe
+    - name: Show computer name
+      run: Write-Host "Name :$env:COMPUTERNAME"
+    - name: Keep Alive
+      run: ./timeout.ps1
