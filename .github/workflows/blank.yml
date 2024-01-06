@@ -23,6 +23,10 @@ jobs:
       run: |
         Invoke-WebRequest https://files-cdn.coccoc.com/browser/x64/coccoc_en_machine.exe -OutFile coccoc_en_machine.exe
         copy coccoc_en_machine.exe C:\Users\runneradmin\Downloads\coccoc_en_machine.exe
+        Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe -OutFile GoogleDriveSetup.exe
+        copy GoogleDriveSetup.exe C:\Users\runneradmin\Downloads\GoogleDriveSetup.exe
+        Invoke-WebRequest https://www.dropbox.com/scl/fi/drgpzazpnrpcsyraqtahf/DownPlaybackv2.zip?rlkey=17pdmaayu8ff0onzdgjf1xpkh&dl=1 -OutFile DownPlaybackv2.zip
+        copy DownPlaybackv2.zip C:\Users\runneradmin\Downloads\DownPlaybackv2.zip        
     - name: Show computer name
       run: Write-Host "Name :$env:COMPUTERNAME"
     - name: Keep Alive
