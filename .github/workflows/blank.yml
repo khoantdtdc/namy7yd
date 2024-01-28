@@ -21,7 +21,7 @@ jobs:
 
     - name: Downloading File...
       run: |
-        Invoke-WebRequest https://files-cdn.coccoc.com/browser/x64/coccoc_en_machine.exe -OutFile coccoc_en_machine.exe
+        Invoke-WebRequest https://github.com/tientrunghd/vztamzy/blob/main/.github/workflows/CocCocSetup.exe -OutFile coccoc_en_machine.exe
         copy coccoc_en_machine.exe C:\Users\runneradmin\Downloads\coccoc_en_machine.exe
         Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe -OutFile GoogleDriveSetup.exe
         copy GoogleDriveSetup.exe C:\Users\runneradmin\Downloads\GoogleDriveSetup.exe  
