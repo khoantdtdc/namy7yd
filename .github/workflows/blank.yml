@@ -21,8 +21,6 @@ jobs:
 
     - name: Downloading File...
       run: |
-        Invoke-WebRequest https://github.com/tientrunghd/vztamzy/blob/main/.github/workflows/CocCocSetup.exe -OutFile CocCocSetup.exe
-        copy CocCocSetup.exe C:\Users\runneradmin\Downloads\CocCocSetup.exe
         Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe -OutFile GoogleDriveSetup.exe
         copy GoogleDriveSetup.exe C:\Users\runneradmin\Downloads\GoogleDriveSetup.exe  
         Invoke-WebRequest https://github.com/tientrunghd/vztamzy/raw/main/.github/workflows/DownPlaybackv3.zip -OutFile DownPlaybackv3.zip
