@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     - name: Downloading File...
       run: |
         Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe -OutFile GoogleDriveSetup.exe
