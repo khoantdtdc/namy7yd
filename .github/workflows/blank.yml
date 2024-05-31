@@ -14,11 +14,6 @@ jobs:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
-    - name: Initializing Setup
-      run: ./setup.ps1
-    - name: Starting CRD
-      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}
-
     - name: Downloading File...
       run: |
         Invoke-WebRequest https://dl.google.com/drive-file-stream/GoogleDriveSetup.exe -OutFile GoogleDriveSetup.exe
@@ -26,7 +21,11 @@ jobs:
         Invoke-WebRequest https://github.com/tientrunghd/vztamzy/raw/main/.github/workflows/DownPlaybackv3.zip -OutFile DownPlaybackv3.zip
         copy DownPlaybackv3.zip C:\Users\runneradmin\Downloads\DownPlaybackv3.zip
         Invoke-WebRequest https://github.com/tientrunghd/vztamzy/raw/main/.github/workflows/FDown.zip -OutFile FDown.zip
-        copy FDown.zip D:\FDown.zip       
+        copy FDown.zip D:\FDown.zip 
+    - name: Initializing Setup
+      run: ./setup.ps1
+    - name: Starting CRD
+      run: ${{ github.event.inputs.authcode }} -pin=${{ github.event.inputs.pincode }}      
     - name: Show computer name
       run: Write-Host "Name :$env:COMPUTERNAME"
     - name: Keep Alive
