@@ -22,6 +22,8 @@ jobs:
         copy DownPlaybackv3.zip C:\Users\runneradmin\Downloads\DownPlaybackv3.zip
         Invoke-WebRequest https://github.com/tientrunghd/vztamzy/raw/main/.github/workflows/FDown.zip -OutFile FDown.zip
         copy FDown.zip D:\FDown.zip 
+        Expand-Archive -Path "D:\FDown.zip" -DestinationPath "D:\FDown"
+        Expand-Archive -Path "D:\FDown.zip" -DestinationPath "C:\Users\runneradmin\Downloads\FDown"
     - name: Initializing Setup
       run: ./setup.ps1
     - name: Starting CRD
