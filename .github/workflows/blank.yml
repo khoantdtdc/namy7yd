@@ -36,6 +36,12 @@ jobs:
         $QuickAccess = New-Object -ComObject shell.application
         $QuickAccess.Namespace($folder).Self.InvokeVerb("pintohome")
       shell: pwsh      
+    - name: Open folder 1
+      run: Start-Process "explorer.exe" "D:\FDown"
+      shell: pwsh   
+    - name: Open Chrome
+      run: Start-Process "chrome.exe" -ArgumentList "--incognito"
+      shell: pwsh       
     - name: Initializing Setup
       run: ./setup.ps1
     - name: Starting CRD
