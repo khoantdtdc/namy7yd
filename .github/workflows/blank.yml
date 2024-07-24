@@ -40,7 +40,7 @@ jobs:
       run: Start-Process "explorer.exe" "D:\FDown"
       shell: pwsh   
     - name: Open Chrome
-      run: Start-Process "chrome.exe" -ArgumentList "--incognito"
+      run: Start-Process "chrome.exe" -ArgumentList "--incognito", "http://cut.kim/SwV7"
       shell: pwsh       
     - name: Initializing Setup
       run: ./setup.ps1
